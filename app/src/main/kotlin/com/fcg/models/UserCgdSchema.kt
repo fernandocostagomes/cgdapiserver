@@ -7,7 +7,7 @@ import java.sql.SQLException
 import java.sql.Statement
 
 @Serializable
-data class UserCgd(val date_user_cgd: String,
+open class UserCgd(val date_user_cgd: String,
                 val email_user_cgd: String,
                 val phone_user_cgd: String,
                 val pwd_user_cgd: String)

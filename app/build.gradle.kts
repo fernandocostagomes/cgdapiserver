@@ -32,11 +32,11 @@ repositories {
 dependencies {
     // Align versions of all Kotlin components
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
-
     implementation ("io.ktor:ktor-server-core-jvm:$ktor_version")
-    implementation ("io.ktor:ktor-server-auth-jvm:$ktor_version")
 
-    implementation ("io.ktor:ktor-server-auth-jwt-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-auth:$ktor_version")
+    implementation("io.ktor:ktor-server-auth-jwt:$ktor_version")
+
     implementation ("io.ktor:ktor-server-cors-jvm:$ktor_version")
     implementation ("io.ktor:ktor-server-openapi:$ktor_version")
     implementation ("io.ktor:ktor-server-swagger:$ktor_version")
@@ -52,6 +52,7 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
+    implementation("org.testng:testng:7.1.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")

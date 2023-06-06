@@ -3,19 +3,20 @@
  */
 package com.fcg
 
-import com.fcg.plugins.configureDatabases
-import com.fcg.plugins.configureHTTP
-import com.fcg.plugins.configureRouting
-import com.fcg.plugins.configureSerialization
+import com.fcg.authentication.JwtConfig
+import com.fcg.plugins.*
 import io.ktor.server.application.*
 
 class App {}
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
+val jwtConfig = JwtConfig(System.getenv("KTOR_CGD_JWT_SECRET"))
+
 fun Application.module() {
     configureHTTP()
     configureSerialization()
     configureDatabases()
     configureRouting()
+    configureSecurity()
 }
